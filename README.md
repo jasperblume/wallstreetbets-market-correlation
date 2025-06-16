@@ -44,7 +44,7 @@ jupyter notebook main_analysis.ipynb
 
 - **WSB data**: QuantConnect/Quiver Quantitative
 - **Market data**: Yahoo Finance
-- **Coverage**: 5 stocks over 6.5 years (2,400+ trading days)
+- **Coverage**: 6 stocks over 6.5 years (2,400+ trading days)
 
 ## Authors
 Jasper Blume, Eli Haas, Ian Chiu
