@@ -118,12 +118,12 @@ def calculate_lead_lag_indicator(correlations):
     """
     Calculate a simple lead/lag indicator.
     Parameters:
-    - correlations: List of correlation values for all shifts [lead_3, lead_2, lead_1, 0, lag_1, lag_2, lag_3]
+    - correlations: List of correlation values for all shifts [lag_3, lag_2, lag_1, 0, lead_1, lead_2, lead_3]
     Returns:
     - indicator: The lead/lag indicator value (positive = leading, negative = lagging)
     """
-    lead_mean = sum(correlations[0:3]) / 3  # lead_3, lead_2, lead_1
-    lag_mean = sum(correlations[4:7]) / 3   # lag_1, lag_2, lag_3
+    lag_mean = sum(correlations[0:3]) / 3   # lag_3, lag_2, lag_1
+    lead_mean = sum(correlations[4:7]) / 3  # lead_1, lead_2, lead_3
     return lead_mean - lag_mean
 
 def analyze_lead_lag_correlations(ticker, ax, lead_lag_data):
@@ -138,7 +138,7 @@ def analyze_lead_lag_correlations(ticker, ax, lead_lag_data):
     - indicator: The lead/lag indicator value
     - zero_correlation: The correlation at time shift 0
     """
-    shifts = ["lead_3", "lead_2", "lead_1", "0", "lag_1", "lag_2", "lag_3"]
+    shifts = ["lag_3", "lag_2", "lag_1", "0", "lead_1", "lead_2", "lead_3"]
     correlations = []
     
     for shift in shifts:
